@@ -1,28 +1,55 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
-</template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import LogarConta from "@/components/LogarConta.vue";
+  import NovoCadastro from "@/components/NovoCadastro.vue";
+  import TheHeader from "@/components/TheHeader.vue";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default{
+    components: {
+      LogarConta,
+      NovoCadastro,
+      TheHeader    
+      },
+    name: "App"
   }
-}
 </script>
 
+<template>
+  <section>
+    <TheHeader />
+    <main>
+      <section class="container_forms">
+        <logar-conta></logar-conta>
+        <novo-cadastro></novo-cadastro>
+      </section>
+    </main>
+  </section>
+</template>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  main{
+    max-width: 1200px;
+    margin: 30px auto;
+  }
+
+  .container_forms{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media(max-width: 700px){
+    .container_forms{
+      flex-direction: column;
+    }
+  }
+
+
 </style>
